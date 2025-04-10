@@ -354,5 +354,19 @@ module.exports = [
             //permission: { "B7": 1, "IE": 1, "C9": 1 },
             iconClass: 'fa fa-dashboard'
         }
+    },
+    {
+        route: '/garment-master-plan/master-lock-booking-order',
+        name: 'master-lock-booking-order',
+        moduleId: './modules/garment-master-plan/master-lock-booking-order/index',
+        nav: true,
+        title: 'Master Lock Booking Order',
+        auth: true,
+        settings: {
+            group: "g-master-plan",
+            // permission: { "B7": 1 },
+            permission: { "C21": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
     }
 ]
