@@ -31,7 +31,7 @@ export async function configure(aurelia) {
             }
 
             var core = "https://com-efrata-service-core-dev.azurewebsites.net/v1/";
-            var auth = "https://localhost:7046/v1/";
+            var auth = "https://com-efrata-service-auth-dev.azurewebsites.net/v1/";
             var productionAzure = "https://com-efrata-service-finishing-printing-dev.azurewebsites.net/v1/";
             var purchasingAzure = "https://com-efrata-service-purchasing-dev.azurewebsites.net/v1/";
             var inventoryAzure = "https://com-efrata-service-inventory-dev.azurewebsites.net/v1/";
@@ -41,7 +41,6 @@ export async function configure(aurelia) {
             var packingInventory = "https://com-efrata-service-packing-inventory-dev.azurewebsites.net/v1/";
             
             const garmentShipping = "https://garment-etl-service.azurewebsites.net/api/";
-            var ItInven = "https://it-inventory-etl-service.azurewebsites.net/api/";
 
             config.registerEndpoint('auth', auth);
             config.registerEndpoint('core', core);
@@ -49,12 +48,10 @@ export async function configure(aurelia) {
             config.registerEndpoint('purchasing-azure', purchasingAzure, defaultConfig);
             config.registerEndpoint('inventory-azure', inventoryAzure, defaultConfig);
             config.registerEndpoint('sales', sales, defaultConfig);
-            config.registerEndpoint('weaving', weaving, defaultConfig);
             config.registerEndpoint('finance', finance, defaultConfig);
             config.registerEndpoint('garment-production', garmentProduction, defaultConfig);
             config.registerEndpoint('packing-inventory', packingInventory, defaultConfig);
             config.registerEndpoint('garment-shipping', garmentShipping, defaultConfig);
-            config.registerEndpoint('ItInven', ItInven, { headers: { Accept: '*/*', 'Sec-Fetch-Site': 'cross-site' }, mode: 'cors' });
         })
         .plugin("aurelia-authentication", baseConfig => {
             baseConfig.configure(authConfig);
