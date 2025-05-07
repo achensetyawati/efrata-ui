@@ -10,8 +10,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi ni",
       permission : {'L1' : 1},
-
-      //permission: { "PDU": 1, "C9": 1, "PG": 1 },
       iconClass: 'fa fa-dashboard'
     }
   },
@@ -26,8 +24,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi ni",
       permission : {'L2' : 1},
-
-      //permission: { "PDU":1, "C9": 1, "B9": 2, "B4": 2, "B1": 2 },
       iconClass: 'fa fa-dashboard'
     }
   },
@@ -42,8 +38,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi ni",
       permission : {'L3' : 1},
-
-      //permission: { "PDU": 1, "C9": 1, "B9": 2 },
       iconClass: 'fa fa-dashboard'
     }
   },
@@ -58,8 +52,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi ni",
       permission : {'L4' : 1},
-
-      //permission: { "PDU":1, "C9": 1, "B9": 1, "B4": 1, "B1": 1, PG: 1 },
       iconClass: 'fa fa-dashboard'
     }
   },
@@ -74,8 +66,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi ni",
       permission : {'L5' : 1},
-
-      //permission: { "PDU":1,"C9": 1, "B4": 2 },
       iconClass: 'fa fa-dashboard'
     },
   },
@@ -91,8 +81,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi ni",
       permission : {'L6' : 1},
-
-      //permission: { "PDU":1, "C9": 1, "B9": 1, "B4": 1, "B1": 1, PG: 1 },
       iconClass: 'fa fa-dashboard'
     },
   },
@@ -107,8 +95,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi ni",
       permission : {'L7' : 1},
-
-      //permission: { "C9": 1, "B4": 2, "PDU": 1 },
       iconClass: "fa fa-dashboard",
     },
   },
@@ -123,8 +109,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi ni",
       permission : {'L8' : 1},
-
-      //permission: { "PDU":1, "C9": 1, "B9": 1, "B4": 1, "B1": 1, PG: 1 },
       iconClass: 'fa fa-dashboard'
     }
   },
@@ -139,12 +123,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi disposisi",
       permission : {'L9' : 1},
-
-      //permission: {
-      //  PG: 1,
-      //  PDU: 1,
-      //  C9: 1,
-      //},
       iconClass: "fa fa-clone",
     }
   },
@@ -159,12 +137,6 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi disposisi",
       permission : {'L10' : 1},
-
-      //permission: {
-      //  B9: 2,
-      //  PDU: 1,
-      //  C9: 1,
-      //},
       iconClass: "fa fa-clone",
     },
   },
@@ -179,37 +151,9 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi disposisi",
       permission : {'L11' : 1},
-
-      //permission: { "PDU":1, "C9": 1, "B9": 2, "B4": 2, "B1": 2 },
       iconClass: "fa fa-dashboard",
     },
   },
-  // {
-  //   route: "/garment-finance/reports/garment-down-payment",
-  //   name: "garment-down-payment",
-  //   moduleId: "./modules/garment-finance/reports/garment-down-payment/index",
-  //   nav: true,
-  //   title: "Laporan Uang Muka",
-  //   auth: true,
-  //   settings: {
-  //     group: "g-finance",
-  //     subGroup: "ekspedisi disposisi",
-  //     //permission: {
-  //       P1: 1,
-  //       P2: 1,
-  //       P3: 1,
-  //       P4: 1,
-  //       P5: 1,
-  //       P6: 1,
-  //       P7: 1,
-  //       PI: 1,
-  //       PG: 1,
-  //       PK: 1,
-  //       C9: 1,
-  //     },
-  //     iconClass: "fa fa-clone",
-  //   }
-  // },
   {
     route: "/garment-finance/payment-disposition-note",
     name: "payment-disposition-note",
