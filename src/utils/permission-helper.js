@@ -14,6 +14,6 @@ export class PermissionHelper {
         const token = JSON.parse(storage.get(config.storageKey));
         const user = jwtDecode(token.data);
         
-        return user.permission;
+        return JSON.parse(user.permission);
     }
 }
