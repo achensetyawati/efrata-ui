@@ -3,6 +3,7 @@ import {Router} from 'aurelia-router';
 import { contains } from 'underscore';
 import { push } from '../../../routes/general';
 import {Service,CoreService} from './service';
+import { Base64Helper } from '../../../utils/base-64-coded-helper';
 
 
 @inject(Router, Service,CoreService)
@@ -18,7 +19,8 @@ export class Edit {
     info = { page: 1,size:2000};
 
     async activate(params) {
-        var id = params.id;
+        const decoded = Base64Helper.decodeUnicode(params.id);
+        var id = decoded;
         this.data = await this.service.getById(id);
     }
 
