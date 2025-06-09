@@ -6,7 +6,7 @@
 # on:
 #   push:
 #     branches:
-#       - dev
+#       - dev-v8
 
 # jobs:
 #   build-and-deploy:
