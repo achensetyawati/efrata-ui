@@ -72,22 +72,6 @@ export class DataForm {
                 "Satuan",
                 "Tipe Fabric"
             ];
-
-            this.itemsFabric.columns =  [
-                "Kode Barang",
-                "Nama Barang",
-                "Keterangan Barang",
-                "RO Asal",
-                "Jumlah DO Awal",
-                "Jumlah DO",
-                "Satuan",
-                "Tipe Fabric",
-                "Warna",
-                "Rak",
-                "Box",
-                "Level",
-                "Area",
-            ];
         }
         
         if (this.data) {
@@ -330,6 +314,8 @@ export class DataForm {
                                 this.dataItems.push(Items);
                             }
                         }
+                        
+                        
                     });
         }
         else{
@@ -521,22 +507,6 @@ export class DataForm {
             "Jumlah DO Awal",
             "Satuan",
             "Tipe Fabric"
-        ],
-    };
-    itemsFabric = {
-        columns: [
-            "Kode Barang",
-            "Nama Barang",
-            "Keterangan Barang",
-            "RO Asal",
-            "Jumlah DO Awal",
-            "Satuan",
-            "Tipe Fabric",
-            "Warna",
-            "Rak",
-            "Box",
-            "Level",
-            "Area",
         ],
     };
 
