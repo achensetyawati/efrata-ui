@@ -96,26 +96,17 @@ export class View {
     }
 
     cancel(event) {
-        var r = confirm("Apakah anda yakin akan keluar?")
-        if ( r == true) {
-            this.router.navigateToRoute('list');
-        }
+        this.router.navigateToRoute('list');
     }
 
     edit(event) {
-        var r = confirm("Apakah anda yakin akan mengubah data ini?")
-        if (r == true) {
-            this.router.navigateToRoute('edit', { id: this.data.Id });
-        }
+        this.router.navigateToRoute('edit', { id: this.data.Id });
     }
 
     delete(event) {
-        var r = confirm("Apakah anda yakin akan menghapus data ini?")
-        if (r == true) {
-            this.service.delete(this.data).then(result => {
-                this.cancel();
-            });
-        }
+        this.service.delete(this.data).then(result => {
+            this.cancel();
+        });
     }
 
 }

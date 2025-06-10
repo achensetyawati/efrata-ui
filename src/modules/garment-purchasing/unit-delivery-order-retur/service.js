@@ -8,7 +8,6 @@ import moment from 'moment';
 const serviceUri = 'garment-unit-delivery-order-returns';
 const unitReceiptNoteItemUri = 'garment-unit-receipt-notes/items';
 const unitReceiptNoteUri = 'garment-unit-receipt-notes';
-const doitemsUri = 'garment-do-items';
 
 export class Service extends RestService {
 
@@ -57,12 +56,8 @@ export class Service extends RestService {
         return super.get(endpoint);
     }
     
-    // getDOItemsById(id) {
-    //     var endpoint = `${unitReceiptNoteUri}/do-items/${id}`;
-    //     return super.get(endpoint);
-    // }
     getDOItemsById(id) {
-        var endpoint = `${doitemsUri}/${id}`;
+        var endpoint = `${unitReceiptNoteUri}/do-items/${id}`;
         return super.get(endpoint);
     }
 }
