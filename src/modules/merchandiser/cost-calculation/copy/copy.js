@@ -2,6 +2,8 @@ import { inject, Lazy } from "aurelia-framework";
 import { Router } from "aurelia-router";
 import { Service, PurchasingService } from "../service";
 import { RateService } from '../service-rate';
+import { Base64Helper } from '../../../../utils/base-64-coded-helper';
+
 
 import numeral from 'numeral';
 numeral.defaultFormat("0,0.00");
@@ -31,7 +33,8 @@ export class Copy {
     ];
 
     async activate(params) {
-        this.id = params.id;
+        const decoded = Base64Helper.decode(params.id);
+        this.id = decoded;
         this.data = await this.service.getById(this.id);
         this.copiedROFrom = this.data.RO_Number;
         this.data.PreSCNoSource = this.data.PreSCNo;
