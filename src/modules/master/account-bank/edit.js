@@ -14,7 +14,7 @@ export class Edit {
 
   async activate(params) {
       //var id = params.id;
-        const decoded = Base64Helper.decodeUnicode(params.id);
+        const decoded = Base64Helper.decode(params.id);
         var id = decoded;
 
       this.data = await this.service.getById(id);
@@ -22,8 +22,9 @@ export class Edit {
 
   cancelCallback(event) {
    
-
-    this.router.navigateToRoute('view', { id: this.data.Id });
+    const encoded = Base64Helper.encode(this.data.Id);
+    this.router.navigateToRoute('view', { id: encoded });
+    //this.router.navigateToRoute('view', { id: this.data.Id });
   }
 
   saveCallback(event) {

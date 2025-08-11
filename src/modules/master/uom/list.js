@@ -46,7 +46,7 @@ export class List {
       var data = arg.data;
       switch(arg.name) {
         case "detail":
-        const encoded = Base64Helper.encodeUnicode(data.Id);
+        const encoded = Base64Helper.encode(data.Id);
         this.router.navigateToRoute('view', { id: encoded });
         //this.router.navigateToRoute('view', {id: data.Id});
         break;
