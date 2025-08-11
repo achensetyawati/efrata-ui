@@ -63,7 +63,7 @@ export class View {
         }
     }
 
-    ancel(event) {
+    cancel(event) {
         var r = confirm("Apakah anda yakin akan keluar?")
         if (r == true) {
             this.router.navigateToRoute('list');

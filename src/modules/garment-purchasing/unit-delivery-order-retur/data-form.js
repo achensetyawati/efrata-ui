@@ -152,7 +152,6 @@ export class DataForm {
             var urn= await this.service.searchUnitReceiptNote(info).then(result=>{return result.data;});
             var dataItems=[];
             if(urn){
-        console.log(urn)
                 for (var item of urn) {
                     
                     var Items = {};
