@@ -20,7 +20,8 @@ export class Edit {
     }
 
     async activate(params) {
-        var id = params.id;
+        const decoded = Base64Helper.decode(params.id);
+        var id = decoded;
         this.data = await this.service.getById(id);
         this.data.booking=JSON.parse(this.data.BookingItems);
         if(this.data && this.data.BookingOrderId){
@@ -83,7 +84,8 @@ export class Edit {
     }
 
     cancel(event) {
-        this.router.navigateToRoute('view', { id: this.data.Id });
+        const encoded = Base64Helper.encode(this.data.Id);
+        this.router.navigateToRoute('view', { id: encoded });
     }
 
     save(event) {
