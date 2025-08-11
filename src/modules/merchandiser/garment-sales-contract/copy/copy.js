@@ -1,6 +1,7 @@
 import { inject, Lazy } from "aurelia-framework";
 import { Router } from "aurelia-router";
 import { Service, CoreService } from '../service';
+import { Base64Helper } from '../../../../utils/base-64-coded-helper';
 
 @inject(Router, Service,CoreService)
 export class Copy {
@@ -25,7 +26,8 @@ export class Copy {
     ];
 
     async activate(params) {
-        this.id = params.id;
+        const decoded = Base64Helper.decode(params.id);
+        this.id = decoded;
         this.data = await this.service.getById(this.id);
         this.copiedFrom = { SCNo: this.data.SalesContractNo };
 

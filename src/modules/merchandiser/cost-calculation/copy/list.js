@@ -1,6 +1,7 @@
 import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import CostCalculationLoader from "../../../../loader/cost-calculation-garment-loader";
+import { Base64Helper } from '../../../../utils/base-64-coded-helper';
 
 @inject(Router)
 export class List {
@@ -25,7 +26,8 @@ export class List {
 
     copy() {
         if (this.costCalculation) {
-            this.router.navigateToRoute('copy', { id: this.costCalculation.Id });
+            const encoded = Base64Helper.encode(this.costCalculation.Id);
+            this.router.navigateToRoute('copy', { id: encoded });
         }
     }
 }
