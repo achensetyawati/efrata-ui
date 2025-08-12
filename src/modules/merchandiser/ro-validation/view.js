@@ -4,6 +4,7 @@ import { Service } from './service';
 import { AuthService } from "aurelia-authentication";
 import { Dialog } from '../../../au-components/dialog/dialog';
 import { RejectDialog } from "./dialog/reject";
+import { Base64Helper } from '../../../utils/base-64-coded-helper';
 
 @inject(Router, Service, AuthService,Dialog)
 export class View {
@@ -20,7 +21,8 @@ export class View {
     }
 
     async activate(params, routeConfig, navigationInstruction) {
-        let id = params.id;
+        const decoded = Base64Helper.decode(params.id);
+        var id = decoded;
         this.data = await this.service.read(id);
 
         const instruction = navigationInstruction.getAllInstructions()[0];
