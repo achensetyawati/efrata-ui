@@ -23,7 +23,6 @@ export class Item {
     activate(context) {
         this.context = context;
         this.data = context.data;
-        console.log("dataitem", this.data);
         
         this.error = context.error;
 
