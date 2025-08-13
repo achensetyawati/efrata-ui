@@ -3,6 +3,8 @@ import { Router } from "aurelia-router";
 import { Service } from "./service";
 import { Dialog } from "../../../au-components/dialog/dialog";
 import numeral from "numeral";
+import { Base64Helper } from '../../../utils/base-64-coded-helper';
+
 numeral.defaultFormat("0,0.00");
 const US = "US$. ";
 const RP = "Rp. ";
@@ -125,7 +127,8 @@ export class View {
             this.me = null;
         }
 
-        var id = params.id;
+        const decoded = Base64Helper.decode(params.id);
+        var id = decoded;
 
         if (this.type !== "KadivMD" && this.type !== "PPIC" && this.type !== "IE") {
             this.data = await this.service.getById(id);
