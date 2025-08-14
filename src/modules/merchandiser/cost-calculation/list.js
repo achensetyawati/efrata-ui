@@ -4,6 +4,7 @@ import { Router } from 'aurelia-router';
 import { activationStrategy } from 'aurelia-router';
 import { AuthService } from "aurelia-authentication";
 import moment from 'moment';
+import { Base64Helper } from '../../../utils/base-64-coded-helper';
 
 @inject(Router, Service, AuthService)
 export class List {
@@ -122,7 +123,8 @@ export class List {
         var data = arg.data;
         switch (arg.name) {
             case "Detail":
-                this.router.navigateToRoute('view', { id: data.Id });
+                const encoded = Base64Helper.encode(data.Id);
+                this.router.navigateToRoute('view', { id: encoded });
                 break;
             case "Cetak Cost Calculation":
             case "Cetak Cost Calculation (DRAFT)":

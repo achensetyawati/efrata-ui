@@ -1,6 +1,7 @@
 import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import Loader from "../../../../loader/garment-sales-contracts-loader";
+import { Base64Helper } from '../../../../utils/base-64-coded-helper';
 
 @inject(Router)
 export class List {
@@ -25,7 +26,8 @@ export class List {
 
     copy() {
         if (this.data) {
-            this.router.navigateToRoute('copy', { id: this.data.Id });
+            const encoded = Base64Helper.encode(this.data.Id);
+            this.router.navigateToRoute('copy', { id: encoded });
         }
     }
 }
