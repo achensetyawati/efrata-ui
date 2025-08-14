@@ -47,30 +47,58 @@ export class Service extends RestService {
         //return super.get(endpoint);
     }
     
-    generateExcel(info) {
-        var username =null;
-        var supplierId =0;
-        var supplierName = null;
-        var endpoint = `${serviceUri}/xlsx?`;
-        if(info.createdBy != null && info.createdBy != undefined){
-            username = info.createdBy.Username;
-            endpoint +=`username=${args.username}`;
-        }
-        if(info.supplierName!= null && info.supplierName != undefined){
-            supplierId = info.supplierName.Id;
-            supplierName = info.supplierName.name;
-            endpoint += `&supplierId=${args.supplierId}&supplirName=${args.supplierName}`;
-        }
-        var args ={
-            username: username,
-            supplierId : supplierId,
-            supplierName : supplierName,
-            dateFrom : info.dateFrom,
-            dateTo : info.dateTo
-        }
-        endpoint += `&dateFrom=${args.dateFrom}&dateTo=${args.dateTo}`;
-        // var endpoint = `${serviceUri}`;
+    // generateExcel(info) {
+    //     var username =null;
+    //     var supplierId =0;
+    //     var supplierName = null;
+    //     var endpoint = `${serviceUri}/xlsx?`;
+    //     if(info.createdBy != null && info.createdBy != undefined){
+    //         username = info.createdBy.Username;
+    //         endpoint +=`username=${args.username}`;
+    //     }
+    //     if(info.supplierName!= null && info.supplierName != undefined){
+    //         supplierId = info.supplierName.Id;
+    //         supplierName = info.supplierName.name;
+    //         endpoint += `&supplierId=${args.supplierId}&supplirName=${args.supplierName}`;
+    //     }
+    //     var args ={
+    //         username: username,
+    //         supplierId : supplierId,
+    //         supplierName : supplierName,
+    //         dateFrom : info.dateFrom,
+    //         dateTo : info.dateTo
+    //     }
+    //     endpoint += `&dateFrom=${args.dateFrom}&dateTo=${args.dateTo}`;
+    //     // var endpoint = `${serviceUri}`;
         
-        return super.getXls(endpoint,args);
+    //     return super.getXls(endpoint,args);
+    // }
+    generateExcel(info) {
+        const args = {
+            username: null,
+            supplierId: 0,
+            supplierName: null,
+            dateFrom: info.dateFrom,
+            dateTo: info.dateTo
+        };
+
+        let endpoint = `${serviceUri}/xlsx?`;
+
+        if (info.createdBy && info.createdBy.Username) {
+            args.username = info.createdBy.Username;
+            endpoint += `username=${args.username}`;
+        }
+
+        if (info.supplierName && info.supplierName.Id && info.supplierName.name) {
+            args.supplierId = info.supplierName.Id;
+            args.supplierName = info.supplierName.name;
+            endpoint += `&supplierId=${args.supplierId}&supplierName=${args.supplierName}`;
+        }
+
+        endpoint += `&dateFrom=${args.dateFrom}&dateTo=${args.dateTo}`;
+
+        console.log("Generated Endpoint:", endpoint);
+        return super.getXls(endpoint, args);
     }
+
 }

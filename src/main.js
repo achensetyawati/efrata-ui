@@ -32,6 +32,7 @@ export async function configure(aurelia) {
 
             var core = "https://com-efrata-service-core-dev.azurewebsites.net/v1/";
             var auth = "https://com-efrata-service-auth-dev.azurewebsites.net/v1/";
+            var productionAzure = "https://com-efrata-service-finishing-printing-dev.azurewebsites.net/v1/";
             var purchasingAzure = "https://com-efrata-service-purchasing-dev.azurewebsites.net/v1/";
             var inventoryAzure = "https://com-efrata-service-inventory-dev.azurewebsites.net/v1/";
             const sales = "https://com-efrata-service-sales-dev.azurewebsites.net/v1/";
@@ -43,6 +44,7 @@ export async function configure(aurelia) {
 
             config.registerEndpoint('auth', auth);
             config.registerEndpoint('core', core);
+            config.registerEndpoint('production-azure', productionAzure, defaultConfig);
             config.registerEndpoint('purchasing-azure', purchasingAzure, defaultConfig);
             config.registerEndpoint('inventory-azure', inventoryAzure, defaultConfig);
             config.registerEndpoint('sales', sales, defaultConfig);

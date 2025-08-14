@@ -3,7 +3,6 @@ import { Service } from "./service";
 import { Router } from 'aurelia-router';
 import { activationStrategy } from 'aurelia-router';
 import { AuthService } from "aurelia-authentication";
-import { Base64Helper } from '../../../utils/base-64-coded-helper';
 
 import moment from 'moment';
 @inject(Router, Service, AuthService)
@@ -104,8 +103,7 @@ export class List {
         var data = arg.data;
         switch (arg.name) {
             case "Rincian":
-                const encoded = Base64Helper.encode(data.Id);
-                this.router.navigateToRoute('view', { id: encoded });
+                this.router.navigateToRoute('view', { id: data.Id });
                 break;
         }
     }

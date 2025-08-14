@@ -35,13 +35,9 @@ export class List {
     tableData = []
     searching() {
         var args = {
-            // page: this.info.page,
-            // size: this.info.size,
             dono : this.NoSJ ? this.NoSJ : "",
             beacukaino : this.BeacukaiNo ? this.BeacukaiNo : "",
             productCode : this.code ? this.code : "",
-            // category : this.category ? this.category : "",
-            //suppliertype : this.Tipe
         };
         this.service.search(args)
             .then(result=>{
@@ -133,10 +129,10 @@ export class List {
     }
 
     reset() {
-        this.dateFrom= "",
-        this.dateTo="",
-        this.KtgrItem="",
-        this.UnitItem=""
+        this.NoSJ= "",
+        this.BeacukaiNo="",
+        this.code=""
+        // this.UnitItem=""
         
     }
 
@@ -160,7 +156,6 @@ export class List {
         }
     }
 
-    
 
     changePage(e) {
         var page = e.detail;

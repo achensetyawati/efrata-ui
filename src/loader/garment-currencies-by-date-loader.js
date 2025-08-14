@@ -1,5 +1,6 @@
 import { Container } from 'aurelia-dependency-injection';
 import { Config } from "aurelia-api";
+import { data } from 'jquery';
 
 const resource = 'master/garment-currencies';
 
@@ -14,7 +15,9 @@ module.exports = function (keyword, filter) {
         .then(results => {
             var oneResult = [];
             if (results.data.length > 0)
-                oneResult.push(results.data[0]);
+                for (var data of results.data) {
+                    oneResult.push(data);
+                }
             return oneResult;
         });
 }

@@ -19,8 +19,7 @@ export class View {
         const parentInstruction = instruction.parentInstruction;
         const byUser = parentInstruction.config.settings.byUser;
 
-        const decoded = Base64Helper.decode(params.id);
-        var id = decoded;
+        let id = params.id;
         this.data = await this.service.read(id);
 
         if (this.data) {
@@ -88,8 +87,9 @@ export class View {
     }
 
     unpostCallback(event) {
+        const encoded = Base64Helper.encode(this.data.Id);
         if (confirm(`Unpost Data?`))
-            this.service.unpost({ Id: this.data.Id })
+            this.service.unpost({ Id: encoded })
                 .then(result => {
                     this.backToList();
                 });

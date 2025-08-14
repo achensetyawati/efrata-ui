@@ -101,13 +101,13 @@ export class List {
   contextClickCallback(event) {
     let arg = event.detail;
     let data = arg.data;
+    const encoded = Base64Helper.encode(data.Id);
     switch (arg.name) {
       case "Rincian":
-        const encoded = Base64Helper.encode(data.Id);
         this.router.navigateToRoute('view', { id: encoded });
         break;
       case "Cetak PDF":
-        this.service.getPdf(data.Id);
+        this.service.getPdf(encoded);
         break;
     }
   }
