@@ -2,7 +2,6 @@ import { inject, Lazy } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
 import { RestService } from '../../../utils/rest-service';
 var moment = require('moment');
-import { Base64Helper } from '../../../utils/base-64-coded-helper';
 
 const serviceUri = 'garment-internal-purchase-orders';
 const servicePRUri = 'garment-purchase-requests';
@@ -29,7 +28,6 @@ export class Service extends RestService {
     }
 
     split(data) {
-        // const decoded = Base64Helper.decode();
         var endpoint = `${serviceUri}/split/${data.Id}`;
         return super.put(endpoint, data);
     }

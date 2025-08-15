@@ -5,7 +5,7 @@ import {
 import {
   Service
 } from './service';
-
+import { Base64Helper } from '../../../utils/base-64-coded-helper';
 
 @inject(Router, Service)
 export class Stelling {
@@ -33,7 +33,8 @@ export class Stelling {
   }
 
   async activate(params) {
-    var id = params.id;
+    const decoded = Base64Helper.decode(params.id);
+    var id = decoded;
     this.Id = id;
     this.data = await this.service.getStelling(id);
 
@@ -56,11 +57,6 @@ export class Stelling {
   cancel(event) {
     this.router.navigateToRoute('list');
   }
-
-  cancel(event) {
-    this.router.navigateToRoute('list');
-  }
-
 
   //   bind(context) {
   //     this.context = context;

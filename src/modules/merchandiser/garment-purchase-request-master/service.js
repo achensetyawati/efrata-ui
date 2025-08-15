@@ -1,5 +1,4 @@
 import { RestService } from '../../../utils/rest-service';
-import { Base64Helper } from '../../../utils/base-64-coded-helper';
 const serviceUri = 'garment-purchase-requests';
 
 class Service extends RestService {
@@ -18,8 +17,7 @@ class Service extends RestService {
     }
 
     read(id) {
-        const decoded = Base64Helper.decode(id);
-        var endpoint = `${serviceUri}/${decoded}`;
+        var endpoint = `${serviceUri}/${id}`;
         return super.get(endpoint);
     }
 
@@ -45,8 +43,7 @@ class Service extends RestService {
     }
 
     getPdf(id) {
-        const decoded = Base64Helper.decode(id);
-        var endpoint = `${serviceUri}/${decoded}`;
+        var endpoint = `${serviceUri}/${id}`;
         return super.getPdf(endpoint);
     }
 }

@@ -19,7 +19,8 @@ export class View {
         const parentInstruction = instruction.parentInstruction;
         const byUser = parentInstruction.config.settings.byUser;
 
-        let id = params.id;
+        const decoded = Base64Helper.decode(params.id);
+        let id = decoded;
         this.data = await this.service.read(id);
 
         if (this.data) {
