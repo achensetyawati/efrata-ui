@@ -94,7 +94,7 @@ export class List {
         break;
       case "Cetak Barcode":
         this.service
-          .getBarcodeById(encoded)
+          .getBarcodeById(data.Id)
           .then((result) => {})
           .catch((e) => {});
         break;

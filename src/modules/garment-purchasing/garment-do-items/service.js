@@ -1,5 +1,4 @@
 import { RestService } from "../../../utils/rest-service";
-import { Base64Helper } from '../../../utils/base-64-coded-helper';
 const serviceUri = "garment-do-items";
 
 class Service extends RestService {
@@ -13,8 +12,7 @@ class Service extends RestService {
   }
 
   getById(id) {
-    const decoded = Base64Helper.decode(id);
-    var endpoint = `${serviceUri}/${decoded}`;
+    var endpoint = `${serviceUri}/${id}`;
     return super.get(endpoint);
   }
 
@@ -23,8 +21,7 @@ class Service extends RestService {
     return super.put(endpoint, data);
   }
   getStelling(id) {
-    const decoded = Base64Helper.decode(id);
-    var endpoint = `${serviceUri}/stelling/${decoded}`;
+    var endpoint = `${serviceUri}/stelling/${id}`;
     return super.get(endpoint);
   }
   generateExcel(args) {
@@ -32,13 +29,11 @@ class Service extends RestService {
     return super.getXls(endpoint);
   }
   getPdfById(id) {
-    const decoded = Base64Helper.decode(id);
-    var endpoint = `${serviceUri}/stelling/${decoded}`;
+    var endpoint = `${serviceUri}/stelling/${id}`;
     return super.getPdf(endpoint);
   }
   getBarcodeById(id) {
-    const decoded = Base64Helper.decode(id);
-    var endpoint = `${serviceUri}/barcode/${decoded}`;
+    var endpoint = `${serviceUri}/barcode/${id}`;
     return super.getPdf(endpoint);
   }
 }

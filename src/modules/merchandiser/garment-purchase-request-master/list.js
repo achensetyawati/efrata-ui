@@ -107,7 +107,7 @@ export class List {
         this.router.navigateToRoute('view', { id: encoded });
         break;
       case "Cetak PDF":
-        this.service.getPdf(encoded);
+        this.service.getPdf(data.Id);
         break;
     }
   }
