@@ -6,6 +6,7 @@ export class DataForm {
   @bindable readOnly = false;
   @bindable data = { import: true };
   @bindable error = {};
+  @bindable division;
   formOptions = {
     cancelText: "Kembali",
     saveText: "Simpan",
@@ -24,6 +25,14 @@ export class DataForm {
     this.data = this.context.data;
     this.error = this.context.error;
 
+    if(this.data && this.data.Id){
+      this.division = {
+        Id: this.data.DivisionId,
+        Code: this.data.DivisionCode,
+        Name: this.data.DivisionName
+      };
+    }
+
     this.cancelCallback = this.context.cancelCallback;
     this.deleteCallback = this.context.deleteCallback;
     this.editCallback = this.context.editCallback;
@@ -34,21 +43,16 @@ export class DataForm {
     return DivisionLoader;
   }
 
-  divisionChanged(e) {
-    this.data.DivisionId =
-      this.data.DivisionId !== this.context.data.DivisionName.Id
-        ? this.context.data.DivisionName.Id
-        : this.data.DivisionId;
+ nameView = (unit) => {
+        return `${unit.Code} - ${unit.Name} `;
+    }
 
-    this.data.DivisionCode =
-      this.data.DivisionCode !== this.context.data.DivisionName.Code
-        ? this.context.data.DivisionName.Code
-        : this.data.DivisionCode;
-
-    this.data.DivisionName =
-      this.data.DivisionName !== this.context.data.DivisionName.Name
-        ? this.context.data.DivisionName.Name
-        : this.data.DivisionName;
+  divisionChanged(newValue, oldValue) {
+    if (newValue) {
+        this.data.DivisionId = newValue.Id;
+        this.data.DivisionCode = newValue.Code;
+        this.data.DivisionName = newValue.Name;
+    }
   }
 
   activate() {}
