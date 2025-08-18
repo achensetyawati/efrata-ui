@@ -30,16 +30,16 @@ export async function configure(aurelia) {
                 }
             }
 
-            var core = "https://com-efrata-service-core-dev.azurewebsites.net/v1/";
-            var auth = "https://com-efrata-service-auth-dev.azurewebsites.net/v1/";
-            var productionAzure = "https://com-efrata-service-finishing-printing-dev.azurewebsites.net/v1/";
-            var purchasingAzure = "https://com-efrata-service-purchasing-dev.azurewebsites.net/v1/";
-            var inventoryAzure = "https://com-efrata-service-inventory-dev.azurewebsites.net/v1/";
-            const sales = "https://com-efrata-service-sales-dev.azurewebsites.net/v1/";
-            var finance = "https://com-efrata-service-finance-accounting-dev.azurewebsites.net/v1/";
-            var garmentProduction = "https://com-efrata-service-garment-dev.azurewebsites.net/";
-            var packingInventory = "https://com-efrata-service-packing-inventory-dev.azurewebsites.net/v1/";
-            
+            var core = "https://com-efrata-service-core-v8.azurewebsites.net/v1/";
+            var auth = "https://com-efrata-service-auth-v8.azurewebsites.net/v1/";
+            var productionAzure = "https://com-efrata-service-finishing-printing.azurewebsites.net/v1/";
+            var purchasingAzure = "https://com-efrata-service-purchasing.azurewebsites.net/v1/";
+            var inventoryAzure = "https://com-efrata-service-inventory.azurewebsites.net/v1/";
+            const sales = "https://com-efrata-service-sales.azurewebsites.net/v1/";
+            var finance = "https://com-efrata-service-finance-accounting.azurewebsites.net/v1/";
+            var garmentProduction = "https://com-efrata-service-garment.azurewebsites.net/";
+            var packingInventory = "https://com-efrata-service-packing-inventory.azurewebsites.net/v1/";
+
             const garmentShipping = "https://garment-etl-service.azurewebsites.net/api/";
 
             config.registerEndpoint('auth', auth);
