@@ -44,7 +44,7 @@ export class List {
 
     edit(data) {
         // console.log(data);
-        const encoded = Base64Helper.encodeUnicode(data._id);
+        const encoded = Base64Helper.encode(data._id);
         this.router.navigateToRoute('edit', { id: encoded });
     }
 

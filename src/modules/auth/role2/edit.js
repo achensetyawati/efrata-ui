@@ -19,7 +19,7 @@ export class Edit {
     info = { page: 1,size:2000};
 
     async activate(params) {
-        const decoded = Base64Helper.decodeUnicode(params.id);
+        const decoded = Base64Helper.decode(params.id);
         var id = decoded;
         this.data = await this.service.getById(id);
     }

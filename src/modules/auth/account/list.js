@@ -39,7 +39,7 @@ export class List {
     }
     
     view(data) {
-        const encoded = Base64Helper.encodeUnicode(data._id);
+        const encoded = Base64Helper.encode(data._id);
         this.router.navigateToRoute('view', { id: encoded });
     }
 
