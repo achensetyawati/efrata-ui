@@ -4,6 +4,7 @@ import { Service } from './service';
 import moment from 'moment';
 import { Dialog } from '../../../components/dialog/dialog';
 import { AlertView } from './custom-dialog-view/alert-view';
+import { Base64Helper } from '../../../utils/base-64-coded-helper';
 
 
 @inject(Router, Service, Dialog)
