@@ -13,7 +13,7 @@ export class PermissionHelper {
         const storage = this.authService.authentication.storage;
         const token = JSON.parse(storage.get(config.storageKey));
         const user = jwtDecode(token.data);
-        
-        return JSON.parse(user.permission);
+        return user.permission;
+        //return JSON.parse(user.permission);
     }
 }
