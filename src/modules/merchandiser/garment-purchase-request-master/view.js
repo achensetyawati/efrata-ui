@@ -88,9 +88,8 @@ export class View {
     }
 
     unpostCallback(event) {
-        const encoded = Base64Helper.encode(this.data.Id);
         if (confirm(`Unpost Data?`))
-            this.service.unpost({ Id: encoded })
+            this.service.unpost({ Id: this.data.Id })
                 .then(result => {
                     this.backToList();
                 });
