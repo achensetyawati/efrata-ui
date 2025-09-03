@@ -718,4 +718,67 @@ module.exports = [
       iconClass: 'fa fa-dashboard'
     }
   },
+
+  //CUSTOMS
+    {
+        route: '/customs/monitoring-in',
+        name: 'customs-report-in',
+        moduleId: './modules/customs/monitoring-in/index',
+        nav: true,
+        title: 'Laporan Pemasukan',
+        auth: true,
+        settings: {
+            group: "accounting",
+            subGroup: "report",
+            //permission: { CT: 2, "C9": 1, "PDU":1 },
+            permission: { 'N44': 1  },
+            iconClass: 'fa fa-dashboard'
+        },
+    },
+    {
+        route: '/customs/monitoring-expenditure-good',
+        name: 'customs-report-expenditure-good',
+        moduleId: './modules/customs/monitoring-barang-jadi/index',
+        nav: true,
+        title: 'Laporan Pengeluaran Barang Jadi',
+        auth: true,
+        settings: {
+            group: "accounting",
+            subGroup: "report",
+            //permission: { CT: 2, "C9": 1, "PDU":1 },
+            permission: { 'N45': 1  },
+            iconClass: 'fa fa-dashboard'
+        },
+    },
+    {
+        route: '/customs/monitoring-out',
+        name: 'customs-report-out',
+        moduleId: './modules/customs/monitoring-out/index',
+        nav: true,
+        title: 'Laporan Pengeluaran',
+        auth: true,
+        settings: {
+            group: "accounting",
+            subGroup: "report",
+            //permission: { CT: 2, "C9": 1, "PDU":1 },
+            permission: { 'N46': 1  },
+            iconClass: 'fa fa-dashboard'
+        },
+    },
+    {
+        route: '/customs/realization-bom',
+        name: 'monitoring-realization-bom',
+        moduleId: './modules/customs/realization_bom/index',
+        nav: true,
+        title: 'Laporan Monitoring BOM (Bill of Material)',
+        auth: true,
+        settings: {
+            group: "accounting",
+            subGroup: "report",
+            //permission: { CT: 2, "C9": 1, "PDU":1 },
+            permission: { 'N47': 1  },
+            iconClass: 'fa fa-dashboard'
+        },
+
+    },
 ];
