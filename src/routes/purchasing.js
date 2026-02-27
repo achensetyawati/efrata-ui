@@ -645,6 +645,20 @@ module.exports = [
         }
     },
     {
+        route: 'signature-master',
+        name: 'signature-master',
+        moduleId: './modules/purchasing/master/signature-master/index',
+        nav: true,
+        title: 'Signature Master',
+        auth: true,
+        settings: {
+            group: "purchasing",
+            subGroup: "master",
+            permission: { "F39": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    },
+    {
         route: '/expedition/reports/unit-payment-order-paid-status-report',
         name: 'unit-payment-order-paid-status',
         moduleId: './modules/expedition/reports/unit-payment-order-paid-status-report/index',
